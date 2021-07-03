@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable space-before-function-paren */
 // in this file you can append custom step methods to 'I' object
 
 module.exports = function() {
@@ -7,4 +9,4 @@ module.exports = function() {
     // It is recommended to place a general 'login' function here.
 
   });
-}
+};

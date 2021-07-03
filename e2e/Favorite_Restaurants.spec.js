@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 Feature("Favorite Restaurants");
 
 // 1. Buka halaman favorite (OK)
@@ -78,30 +79,4 @@ Scenario("Unliking one favorite restaurant", async ({ I }) => {
   I.seeElement(".posts");
 
   I.seeTextEquals("You don't have any Favorite Cafe or Restaurant!", ".posts");
-});
-
-// 1. Tidak ada favorite restaurant yang ditampilkan (OK)
-// 2. Buka halaman home (OK)
-// 3. Melihat list restaurant yang berada pada posts element (OK)
-// 4. Membuka restaurant pertama menuju halaman detail restaurant (OK)
-// 5. Melihat form review pada detail halaman (OK)
-// 6. Meng-input fullname dan description di form review (OK)
-// 7. Click submit untuk membuat review baru (OK)
-// 8. Check review yang telah di-submit (OK)
-Scenario("Create a new review", async ({ I }) => {
-  I.see("You don't have any Favorite Cafe or Restaurant!", ".posts");
-
-  I.amOnPage("/");
-
-  I.seeElement(".posts");
-  I.click(locate("a .post").first());
-
-  I.seeElement(".form_review_wrapper form");
-
-  I.fillField("fullname", "Rifqi Abrory");
-  I.fillField("description", "This is awesome restaurant, I want it!");
-
-  I.click("Submit", "#create-review");
-
-  I.seeTextEquals("This is awesome restaurant, I want it!", locate(".user__wrapper .user__info p").last());
 });

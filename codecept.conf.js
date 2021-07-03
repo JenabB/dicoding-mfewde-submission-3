@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { setHeadlessWhen } = require("@codeceptjs/configure");
 
 // turn on headless mode when running with HEADLESS=true environment variable
@@ -9,7 +10,7 @@ exports.config = {
   output: "./output",
   helpers: {
     Puppeteer: {
-      url: "http://localhost:8083",
+      url: "http://localhost:8080",
       show: true,
       windowSize: "1200x900",
     },
