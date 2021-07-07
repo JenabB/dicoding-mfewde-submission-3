@@ -18,6 +18,7 @@ const Detail = {
     try {
       const response = await RestaurantDataSource.getRestaurantById(url.id);
       const { restaurant } = response;
+      console.log(restaurant);
       restaurantContainer.innerHTML = ItemDetailTemplate(restaurant);
       await FavoriteButton.init({
         likeButtonContainer: document.querySelector("#likeButtonContainer"),

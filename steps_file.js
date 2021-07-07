@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /* eslint-disable no-undef */
 /* eslint-disable space-before-function-paren */
 // in this file you can append custom step methods to 'I' object

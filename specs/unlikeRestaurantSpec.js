@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 import RestaurantIdb from "../src/scripts/data/restaurant-idb";
 import createFavoriteButtonPresenter from "./helper/createFavoriteButtonPresenter";
 
 const addFavoriteContainer = () => {
-  document.body.innerHTML = '<div class="like-wrapper" id="likeButtonContainer"></div>';
+  document.body.innerHTML = "<div class=\"like-wrapper\" id=\"likeButtonContainer\"></div>";
 };
 
 describe("Unlike Restaurant", () => {
@@ -18,19 +19,19 @@ describe("Unlike Restaurant", () => {
   it("should display unlike widget when the restaurant has been liked", async () => {
     await createFavoriteButtonPresenter({ id: 1 });
 
-    expect(document.querySelector('[aria-label="unlike this restaurant"]')).toBeTruthy();
+    expect(document.querySelector("[aria-label=\"unlike this restaurant\"]")).toBeTruthy();
   });
 
   it("should not display unlike widget when the restaurant has been liked", async () => {
     await createFavoriteButtonPresenter({ id: 1 });
 
-    expect(document.querySelector('[aria-label="like this restaurant"]')).toBeFalsy();
+    expect(document.querySelector("[aria-label=\"like this restaurant\"]")).toBeFalsy();
   });
 
   it("should be able to remove recently unliked restaurant from the list", async () => {
     await createFavoriteButtonPresenter({ id: 1 });
 
-    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event("click"));
+    document.querySelector("[aria-label=\"unlike this restaurant\"]").dispatchEvent(new Event("click"));
 
     expect(await RestaurantIdb.getAllRestaurants()).toEqual([]);
   });
@@ -39,7 +40,7 @@ describe("Unlike Restaurant", () => {
     await createFavoriteButtonPresenter({ id: 1 });
 
     await RestaurantIdb.deleteRestaurant(1);
-    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event("click"));
+    document.querySelector("[aria-label=\"unlike this restaurant\"]").dispatchEvent(new Event("click"));
 
     expect(await RestaurantIdb.getAllRestaurants()).toEqual([]);
   });

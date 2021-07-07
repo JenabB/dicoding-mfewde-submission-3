@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 import RestaurantIdb from "../src/scripts/data/restaurant-idb";
 import createFavoriteButtonPresenter from "./helper/createFavoriteButtonPresenter";
 
 const addFavoriteContainer = () => {
-  document.body.innerHTML = '<div class="like-wrapper" id="likeButtonContainer"></div>';
+  document.body.innerHTML = "<div class=\"like-wrapper\" id=\"likeButtonContainer\"></div>";
 };
 
 describe("Like Restaurant", () => {
@@ -13,13 +14,13 @@ describe("Like Restaurant", () => {
   it("should show the like button when the restaurant has not been liked before", async () => {
     await createFavoriteButtonPresenter({ id: 1 });
 
-    expect(document.querySelector('[aria-label="like this restaurant"]')).toBeTruthy();
+    expect(document.querySelector("[aria-label=\"like this restaurant\"]")).toBeTruthy();
   });
 
   it("should not show the unlike button when the restaurant has not been liked before", async () => {
     await createFavoriteButtonPresenter({ id: 1 });
 
-    expect(document.querySelector('[aria-label="unlike this restaurant"]')).toBeFalsy();
+    expect(document.querySelector("[aria-label=\"unlike this restaurant\"]")).toBeFalsy();
   });
 
   it("should be able to like the restaurant", async () => {

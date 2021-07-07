@@ -70,6 +70,7 @@ const ItemDetailTemplate = (restaurant) => {
                     </ul>
                 </div>
                 <h2 class="detail-post__subtitle">Address</h2>
+                <p>${restaurant.city}</p>
                 <p>${restaurant.address}</p>
                 <h2 class="detail-post__subtitle">Category</h2>
                 <View class="category_wrapper">
